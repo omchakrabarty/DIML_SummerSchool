@@ -221,6 +221,7 @@ Adapt large pretrained models while updating only a small subset of parameters.
 <summary><b>🔧 Troubleshooting (Click to Expand)</b></summary>
 
 
+
 Missing openpyxl
 
 Error:
@@ -297,3 +298,28 @@ True
 
 (or more GPUs depending on the system).
 
+</details>
+
+
+
+
+
+
+⸻
+
+### Acknowledgements
+
+This tutorial was developed for the Deep Learning for Medical Imaging (DLMI) Summer School to provide a hands-on introduction to Vision-Language Models (VLMs) and Foundation Models for Medical Image Analysis.
+
+The tutorial materials, notebooks, and practical exercises were prepared by:
+
+* Omprakash Chakraborty
+    École de Technologie Supérieure (ÉTS Montréal)
+    📧 omprakash.chakraborty@etsmtl.ca
+* Valentin Gautier
+    LS2N (Nantes, France)
+    📧 valentin.gautier.inp@gmail.com
+
+If you encounter issues with the tutorial or have questions regarding the material, please feel free to contact us.
+
+We hope you enjoy the tutorial and gain valuable hands-on experience with modern medical vision-language foundation models.
