@@ -314,8 +314,7 @@ This tutorial was developed for the Deep Learning for Medical Imaging (DLMI) Sum
 The tutorial materials, notebooks, and practical exercises were prepared by:
 
 * Omprakash Chakraborty
-    École de Technologie Supérieure (ÉTS Montréal)
-    📧 omprakash.chakraborty@etsmtl.ca
+    École de Technologie Supérieure (ÉTS Montréal)  📧 omprakash.chakraborty@etsmtl.ca
 * Valentin Gautier
     LS2N (Nantes, France)
     📧 valentin.gautier.inp@gmail.com
