@@ -60,10 +60,13 @@ cd DIML_SummerSchool
 
 ### Python Environment
 
+⚠️ **Note**:
+If you are running the notebooks using the pre-configured DLMI Summer School environment, you can usually skip this section and proceed directly to the notebooks.
+
 The notebooks were tested using:
-
+```
 Python 3.11
-
+```
 Install the required packages:
 ```
 pip install \
