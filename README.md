@@ -34,22 +34,28 @@ By the end of this tutorial, participants will be able to:
 
 The tutorial consists of five Jupyter notebooks.
 
-Notebook	Description
-1_1_VLMs_Introduction.ipynb	Introduction to medical VLMs and HuggingFace Transformers
-1_2_VLMs_Pretraining.ipynb	Understanding contrastive image-text pretraining
-1_3_ZeroShot.ipynb	Zero-shot classification and prompt engineering
-1_4_BlackBox.ipynb	Few-shot black-box adaptation methods
-1_5_PEFT.ipynb	Parameter-efficient fine-tuning
+Notebook    --	Description
+```
+1_1_VLMs_Introduction.ipynb	-- Introduction to medical VLMs and HuggingFace Transformers
 
+1_2_VLMs_Pretraining.ipynb	--  Understanding contrastive image-text pretraining
+
+1_3_ZeroShot.ipynb	--  Zero-shot classification and prompt engineering
+
+1_4_BlackBox.ipynb	--  Few-shot black-box adaptation methods
+
+1_5_PEFT.ipynb	--  Parameter-efficient fine-tuning
+```
 ⸻
 
 ### Repository Setup
 
 Clone the repository:
+```
+git clone https://github.com/omchakrabarty/DIML_SummerSchool.git
 
-git clone <YOUR_REPOSITORY_URL>
-cd <REPOSITORY_NAME>
-
+cd DIML_SummerSchool
+```
 ⸻
 
 ### Python Environment
@@ -59,7 +65,7 @@ The notebooks were tested using:
 Python 3.11
 
 Install the required packages:
-
+```
 pip install \
     transformers \
     openpyxl \
@@ -69,7 +75,7 @@ pip install \
     scikit-learn \
     tqdm \
     pillow
-
+```
 Important: If packages are installed after the notebook kernel has started, restart the kernel before continuing.
 
 ⸻
@@ -79,31 +85,32 @@ Important: If packages are installed after the notebook kernel has started, rest
 The tutorial uses the SICAPv2 dataset.
 
 A shared copy is available at:
-
+```
 ~/projects/def-sponsor00/SICAPv2
-
+```
 Create a local dataset directory:
-
+```
 mkdir -p ~/local_data/datasets
-
+```
 Copy the dataset:
-
+```
 cp -r ~/projects/def-sponsor00/SICAPv2 \
       ~/local_data/datasets/
-
+```
 Verify the dataset:
-
+```
 ls ~/local_data/datasets/SICAPv2
-
+```
 Expected output:
-
+```
 images
 partition
-
+```
 ⸻
 
 ### Expected Dataset Structure
 
+```
 SICAPv2/
 ├── images/
 └── partition/
@@ -113,6 +120,7 @@ SICAPv2/
     │   ├── TrainCribriform.xlsx
     │   └── TestCribriform.xlsx
     └── Validation/
+```
 
 ⸻
 
@@ -120,6 +128,7 @@ SICAPv2/
 
 Execute the notebooks in the following order:
 
+```
 1_1_VLMs_Introduction.ipynb
             ↓
 1_2_VLMs_Pretraining.ipynb
@@ -129,10 +138,10 @@ Execute the notebooks in the following order:
 1_4_BlackBox.ipynb
             ↓
 1_5_PEFT.ipynb
-
+```
 ⸻
 
-## Notebook 1: Introduction
+## 1_1_VLMs_Introduction.ipynb: Introduction
 
 Topics Covered
 
@@ -150,7 +159,7 @@ Understand how images and text are represented in a shared embedding space.
 
 ⸻
 
-## Notebook 2: Contrastive Pretraining
+## 1_2_VLMs_Pretraining.ipynb: Contrastive Pretraining
 
 Topics Covered
 
@@ -165,7 +174,7 @@ Understand the objective used to pretrain modern vision-language models.
 
 ⸻
 
-## Notebook 3: Zero-Shot Classification
+## 1_3_ZeroShot.ipynb: Zero-Shot Classification
 
 Topics Covered
 
@@ -180,7 +189,7 @@ Perform classification without training a classifier.
 
 ⸻
 
-## Notebook 4: Black-Box Adaptation
+## 1_4_BlackBox.ipynb: Black-Box Adaptation
 
 Topics Covered
 
@@ -195,7 +204,7 @@ Adapt pretrained VLMs using only a small number of labeled examples.
 
 ⸻
 
-## Notebook 5: Parameter-Efficient Fine-Tuning
+## 1_5_PEFT.ipynb: Parameter-Efficient Fine-Tuning
 
 Topics Covered
 
@@ -208,8 +217,9 @@ Learning Outcome
 Adapt large pretrained models while updating only a small subset of parameters.
 
 ⸻
+<details>
+<summary><b>🔧 Troubleshooting (Click to Expand)</b></summary>
 
-Troubleshooting
 
 Missing openpyxl
 
@@ -218,9 +228,9 @@ Error:
 ImportError: Import openpyxl failed
 
 Solution:
-
+```
 pip install openpyxl
-
+```
 Restart the notebook kernel afterwards.
 
 ⸻
@@ -232,15 +242,15 @@ Error:
 ModuleNotFoundError: No module named 'transformers'
 
 Solution:
-
+```
 pip install transformers
-
+```
 Restart the notebook kernel afterwards.
 
 ⸻
 
 CPU/GPU Mismatch
-
+```
 Error:
 
 Input type torch.FloatTensor and weight type torch.cuda.FloatTensor should be the same
@@ -252,11 +262,11 @@ The model is on GPU while the inputs remain on CPU.
 Solution:
 
 inputs = {k: v.to(device) for k, v in inputs.items()}
-
+```
 ⸻
 
 Dataset Not Found
-
+```
 Error:
 
 FileNotFoundError
@@ -264,22 +274,22 @@ FileNotFoundError
 Verify:
 
 ls ~/local_data/datasets/SICAPv2
-
+```
 Expected:
-
+```
 images
 partition
-
+```
 ⸻
 
 Verify GPU Availability
 
 Run:
-
+```
 import torch
 print(torch.cuda.is_available())
 print(torch.cuda.device_count())
-
+```
 Expected output:
 
 True
@@ -287,18 +297,3 @@ True
 
 (or more GPUs depending on the system).
 
-⸻
-
-References
-
-[1] Huang et al., PLIP: Language-Image Pretraining for Pathology.
-
-[2] Lu et al., CONCH: A Vision-Language Foundation Model for Computational Pathology.
-
-⸻
-
-Acknowledgements
-
-This tutorial was prepared for the Summer School on Medical Vision-Language Models and Foundation Models for Medical Imaging.
-
-We hope you enjoy the tutorial and gain hands-on experience with modern medical vision-language foundation models.
