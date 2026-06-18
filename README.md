@@ -109,6 +109,8 @@ Expected output:
 images
 partition
 ```
+⚠️ In the case if you want the dataset locally, you can download it from: https://data.mendeley.com/datasets/9xxm58dvs3/1
+
 ⸻
 
 ### Expected Dataset Structure
